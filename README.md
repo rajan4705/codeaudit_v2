@@ -1,4 +1,4 @@
-# 🛡️ QbitCode Autonomous Security Engine & Pipeline
+# 🛡️ CodeAudit Autonomous Security Engine & Pipeline
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![CUDA](https://img.shields.io/badge/CUDA-12.x%20%7C%2013.x-green.svg)](https://developer.nvidia.com/cuda-toolkit)
@@ -24,10 +24,10 @@ cd <your-repo-name>
 ./scripts/download_models.sh 14b
 
 # 3. Launch the complete pipeline anytime:
-qbitcode
+CodeAudit
 ```
 
-Running `qbitcode` automatically starts:
+Running `CodeAudit` automatically starts:
 1. **Port 6333**: Qdrant Vector Database (206,000+ MITRE CWE/CVE vector embeddings)
 2. **Port 8080**: SAST CWE/CVE Threat Attribution Engine (Jina Code 1.5B GPU backend)
 3. **Port 8082**: SCA Universal 13-Language Dependency Advisory Engine (SQLite OSV)
@@ -53,7 +53,7 @@ Running `qbitcode` automatically starts:
 │   ├── qwen2.5-coder-14b-instruct/    # 28GB fast bug hunter (8 workers)
 │   └── qwen3-coder-30b-a3b-instruct/  # 60GB deep reasoning MoE (4 workers)
 ├── scripts/
-│   ├── qbitcode             # Master one-command pipeline orchestrator
+│   ├── CodeAudit             # Master one-command pipeline orchestrator
 │   ├── download_models.sh   # Automated Hugging Face model downloader
 │   ├── start_vllm_14b.sh    # Dedicated 14B vLLM startup script
 │   └── start_vllm_30b.sh    # Dedicated 30B vLLM startup script
@@ -66,7 +66,7 @@ Running `qbitcode` automatically starts:
 
 ## 🤖 AI Models: 14B vs 30B Dynamic Switching
 
-QbitCode supports live hot-swapping between models without restarting the pipeline:
+CodeAudit supports live hot-swapping between models without restarting the pipeline:
 
 | Model | Size | Workers | KV Cache | Best Used For |
 | :--- | :--- | :--- | :--- | :--- |
@@ -128,7 +128,7 @@ On any fresh clone or new server, run:
 ```bash
 ./scripts/download_databases.sh
 ```
-This automatically downloads all pre-indexed databases from `saad0503/qbitcode-dbs` and pulls the official Jina 1.5B checkpoint.
+This automatically downloads all pre-indexed databases from `saad0503/CodeAudit-dbs` and pulls the official Jina 1.5B checkpoint.
 
 ### ⚡ Easy Microservices Launcher:
 Launch and verify all three security services (:6333 Qdrant, :8080 SAST, :8082 SCA):
